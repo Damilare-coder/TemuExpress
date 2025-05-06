@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="signin.css">
+</head>
+
+<body class="bg-body-tertiary">
+
+
+    <form class="form-login">
+        <p class="title">Sign In </p>
+        <p class="message">Welcome back!, Sign in here </p>
+            
+        <p style="display: none;" id="errorMsgName" class="animate__animated animate__bounce alert alert-danger text-center p-2">Input fields cannot be empty!</p>
+                
+            <label>
+            <span>Email</span>
+
+            <input class="input" type="email" placeholder="" required="" id="emaillogin">
+        </label> 
+            
+            <label>
+            <span>Password</span>
+
+            <input class="input" type="password" placeholder="" required="" id="passwordlogin">
+        </label>
+    
+        <p style="display: none;" id="errorMsgAll" class="animate__animated animate__bounce alert alert-danger text-center p-2">Input cannot be blank!</p>
+    
+        <button id="sub" onclick="signIn()" class="submit">Login</button>
+        <p class="signin">Don't have an acount ? <a href="index.html">Sign up</a> </p>
+
+
+
+
+</body>
+<script src="signin.js"></script>
+
+</html>
