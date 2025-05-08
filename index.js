@@ -28,24 +28,25 @@ if (localStorage.users) {
     let retrieved = JSON.parse(localStorage.getItem('users'))
     console.log(retrieved);
     allUsers = retrieved
+
 } else {
     allUsers = []
 }
 
 const signUp = () => {
 
-
-
     if (firstName.value === '' || lastName.value === '' || email.value === '' || password.value === '') {
-        toast('Fill in the inputs', '#f00', '#fff')
+        toast('Not that quick 😁, fill in the inputs', '#f00', '#fff')
         sub.innerHTML = '...loading'
         setTimeout(() => {
             sub.innerHTML = 'Submit'
-        }, 2000)
+        }, 1000)
 
     } else {
-
         sub.innerHTML = '...loading'
+        setTimeout(() => {
+            sub.innerHTML = 'Submit'
+        }, 1500)
         // console.log(allUsers);
 
 
@@ -58,11 +59,10 @@ const signUp = () => {
 
         let found = allUsers.find(eachUser => eachUser.mail = mail)
         console.log(found);
-        if (found = undefined) {
+        if (found == undefined) {
             allUsers.push(userObj)
-            toast('Sign up successful', '#006400', '#fff')
+            toast('Sign up successful 😁', '#006400', '#fff')
             console.log(allUsers);
-
 
             document.getElementById('firstName').value = ''
             document.getElementById('lastName').value = ''
@@ -76,9 +76,9 @@ const signUp = () => {
             
         } else {
             toast('Account already exists', '#00f', '#fff')
-            setTimeout(() => {
-                window.location.href = 'signin.html'
-        }, 2000)
+        //     setTimeout(() => {
+        //         window.location.href = 'signin.html'
+        // }, 2000)
 
         }
 

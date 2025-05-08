@@ -20,7 +20,7 @@ const toast = (text, background, color, position = 'right') => {
 
 
 const signIn = () => {
-    if (email.value === '' || password.value === '') {
+    if (emailLogin.value === '' || passwordLogin.value === '') {
         sub.innerHTML = '...loading'
         toast('Haba now, fill in the inputs joor😠👿', '#f00', '#fff')
         setTimeout(() => {
@@ -29,13 +29,13 @@ const signIn = () => {
         
     } else {
         sub.innerHTML = '...loading'
-        const mail = document.getElementById('email').value
-        const pass = document.getElementById('password').value
+        const mail = document.getElementById('emailLogin').value
+        const pass = document.getElementById('passwordLogin').value
 
         const signInObj = { mail, pass }
-        console.log(signInObj);
+        // console.log(signInObj);
 
-        let found = gottenUsers.find(user=>user.mail == mail)
+        let found = gottenUsers.find(user=>user.mail == mail && user.pass == pass)
         console.log(found);
         localStorage.person = JSON.stringify(found)
 
@@ -48,7 +48,7 @@ const signIn = () => {
             }, 2000)
         }
 
-        // document.getElementById('email').value = ''
-        // document.getElementById('password').value = ''
+        document.getElementById('emailLogin').value = ''
+        document.getElementById('passwordLogin').value = ''
     }
 }
